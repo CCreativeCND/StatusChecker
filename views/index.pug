@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    title Calum Sites and Services Status
+    link(rel='stylesheet' href='style.css')
+    link(rel='shortcut icon' href='favicon.ico')
+  body
+    -var obj = JSON.parse(statuses)
+    h1 Calum Sites and Services Status
+    table
+      tr
+        td(class='header left') Site
+        td(class='header center tooltip') Access Speed
+          span(class='tooltiptext') These results are not fully accurate. They have additional code latencies included.
+        td(class='header right') Result
+      -for(var prop in obj)
+        tr
+          td(class='left')
+            a(href=obj[prop].url) #{obj[prop].name}
+          td(class='center grey') #{obj[prop].time}ms
+          td(class='right ' + obj[prop].color) #{obj[prop].status} 
+            if obj[prop].code
+              span
+                | (HTTP 
+                a(href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/' + obj[prop].code class=obj[prop].color) #{obj[prop].code}
+                | )
+    p(class='small')= 'Last updated: ' + updated
+    p(class='small')
+      a(href='https://calum.gq') Calum.GQ
