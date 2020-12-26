@@ -117,6 +117,8 @@ updateStatuses();
 app.set('view engine', 'pug');
 app.enable('view cache');
 
+var port = process.env.PORT || 80;
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
@@ -127,4 +129,6 @@ app.get('/', function(req, res) {
   }
 });
 
-app.listen();
+app.listen(3000, function () {
+  console.log('Server running on port ' + port + '!');
+});
