@@ -1,4 +1,4 @@
-# Configuration (config.json)
+# Sites configuration (sites.json)
 Create a JSON array of objects. This information will be used to fetch the data and linked to on the web interface. Example:
 ```
 [
