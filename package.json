@@ -8,8 +8,8 @@
     "debug": "node index.js"
   },
   "keywords": [],
-  "author": "Calum",
-  "license": "ISC",
+  "author": "Calum Dingwall (https://github.com/caburum)",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
     "http-status": "^1.5.0",
